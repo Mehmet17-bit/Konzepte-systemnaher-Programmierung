@@ -1,0 +1,41 @@
+//
+// iterative Fibonacci
+//
+
+void main(){
+ local Integer n;
+ local Integer res;
+ n = readInteger();
+ res = fib(n);
+ writeInteger(n);
+ writeCharacter('\n');
+ writeCharacter('f');
+ writeCharacter('i');
+ writeCharacter('b');
+ writeCharacter(':');
+ writeCharacter(' ');
+ writeInteger(res);
+ writeCharacter('\n');
+}
+
+Integer fib(Integer n) {
+ local Integer fib1;
+ local Integer fib2;
+ local Integer res;
+ local Integer i;
+ fib1 = 0;
+ fib2 = 1;
+ res = 0;
+ i = 1;
+ if (n < 2) {
+  return 1;
+ } else {
+  while(i < n) {
+   res = fib1 + fib2;
+   fib1 = fib2;
+   fib2 = res;
+   i = i + 1;
+  }
+  return res;
+ }
+}
